@@ -86,9 +86,13 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-4">
               <span className="text-gray-500 text-sm">Paiement sécurisé:</span>
-              <div className="flex gap-2">
+              <div className="flex gap-2 items-center">
                 <img src="/images/logo-orange-money.svg" alt="Orange Money" className="h-10 w-auto" />
-                <img src="/images/logo-wave.png" alt="Wave" className="h-10 w-auto" />
+                <div className="h-10 rounded-lg bg-[#0085FF] flex items-center justify-center px-3">
+                  <svg viewBox="0 0 60 20" className="h-5 w-auto">
+                    <path d="M4 16 Q8 8 12 12 Q16 16 20 8 Q24 0 28 4" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+                  </svg>
+                </div>
                 <div className="h-10 w-10 rounded-lg bg-[#00B862] flex items-center justify-center text-white text-xs font-bold">FM</div>
               </div>
             </div>
