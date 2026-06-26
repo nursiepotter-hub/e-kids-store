@@ -9,17 +9,29 @@ interface Props {
 
 export default function ProductCarousel({ images, alt, className = '' }: Props) {
   const [current, setCurrent] = useState(0)
+  const isVideo = (src: string) => src.endsWith('.mp4')
 
   if (images.length === 0) return null
 
+  const src = images[current]
+
   return (
     <div className={`relative overflow-hidden bg-gray-50 ${className}`}>
-      <img
-        src={images[current]}
-        alt={`${alt} - ${current + 1}`}
-        className="product-image w-full h-full object-cover p-2"
-        style={{ borderRadius: '12px' }}
-      />
+      {isVideo(src) ? (
+        <video
+          src={src}
+          controls
+          className="w-full h-full object-cover"
+          style={{ borderRadius: '12px' }}
+        />
+      ) : (
+        <img
+          src={src}
+          alt={`${alt} - ${current + 1}`}
+          className="product-image w-full h-full object-cover p-2"
+          style={{ borderRadius: '12px' }}
+        />
+      )}
       {images.length > 1 && (
         <>
           <button

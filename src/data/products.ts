@@ -54,7 +54,7 @@ export const products: Product[] = [
     id: 'puzzle-avance',
     name: 'Puzzle Niveau Avancé',
     price: 6000,
-    images: ['/images/new-41.jpeg', '/images/toy12.jpeg', '/images/toy13.jpeg'],
+    images: ['/images/new-41.jpeg', '/images/toy12.jpeg', '/images/toy13.jpeg', '/images/video-1.mp4'],
     category: 'puzzles',
     description: 'Puzzle éducatif de niveau avancé.',
   },
