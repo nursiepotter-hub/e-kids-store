@@ -13,12 +13,12 @@ export default function TopBanner() {
         </span>
         <span className="hidden sm:inline">|</span>
         <span className="flex items-center gap-1">
-          <svg viewBox="0 0 30 12" className="h-3 w-auto"><path d="M2 10 Q5 4 8 7 Q11 10 14 4 Q17 0 20 3" stroke="#fff" strokeWidth="1.5" fill="none" strokeLinecap="round"/></svg>
+          <img src="/images/logo-wave.png" alt="Wave" className="h-4 w-auto" />
           <span>Wave</span>
         </span>
         <span className="hidden sm:inline">|</span>
         <span className="flex items-center gap-1">
-          <div className="h-3 w-3 rounded bg-[#00B862] flex items-center justify-center text-white text-[4px] font-bold">FM</div>
+          <img src="/images/logo-free-money.png" alt="Free Money" className="h-4 w-auto" />
           <span>Free Money</span>
         </span>
       </div>

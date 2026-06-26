@@ -102,8 +102,8 @@ export default function Checkout() {
                 <div className="grid grid-cols-3 gap-3">
                   {[
                     { value: 'orange', label: 'Orange Money', icon: <img src="/images/logo-orange-money.svg" alt="Orange Money" className="h-8 w-auto" /> },
-                    { value: 'wave', label: 'Wave', icon: <div className="h-8 rounded-lg bg-[#0085FF] flex items-center justify-center px-4"><svg viewBox="0 0 60 20" className="h-5 w-auto"><path d="M4 16 Q8 8 12 12 Q16 16 20 8 Q24 0 28 4" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round"/></svg></div> },
-                    { value: 'free', label: 'FreeMoney', icon: <div className="h-8 w-8 rounded-lg bg-[#00B862] flex items-center justify-center text-white text-xs font-bold">FM</div> },
+                    { value: 'wave', label: 'Wave', icon: <img src="/images/logo-wave.png" alt="Wave" className="h-8 w-auto" /> },
+                    { value: 'free', label: 'FreeMoney', icon: <img src="/images/logo-free-money.png" alt="Free Money" className="h-8 w-auto" /> },
                   ].map((m) => (
                     <button
                       key={m.value}

@@ -63,7 +63,7 @@ export default function Header() {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://www.instagram.com/ekidsstore/"
+              href="https://www.instagram.com/e_kidstore13"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex p-2 rounded-full hover:bg-gray-100 transition-colors"

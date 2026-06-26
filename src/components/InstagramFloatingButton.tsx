@@ -1,7 +1,7 @@
 export default function InstagramFloatingButton() {
   return (
     <a
-      href="https://www.instagram.com/ekidsstore/"
+      href="https://www.instagram.com/e_kidstore13"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-32 right-7 md:bottom-32 md:right-8 w-14 h-14 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all transform hover:scale-110 z-50 animate-pulse-soft"
