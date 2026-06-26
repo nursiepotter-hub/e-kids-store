@@ -438,9 +438,12 @@ function GiftBoxSection() {
 function DeliverySection() {
   const features = [
     { icon: '🚚', title: 'Livraison partout au Sénégal', sub: 'Rapide et fiable', bg: 'bg-blue-100', iconBg: 'bg-blue-500' },
-    { icon: '💛', title: 'Orange Money', sub: 'Paiement simple et sécurisé', bg: 'bg-orange-100', iconBg: 'bg-orange-500' },
-    { icon: '💙', title: 'Wave', sub: 'Paiement simple et sécurisé', bg: 'bg-sky-100', iconBg: 'bg-sky-500' },
-    { icon: '💚', title: 'Free Money', sub: 'Paiement simple et sécurisé', bg: 'bg-green-100', iconBg: 'bg-green-500' },
+  ]
+
+  const payments = [
+    { img: '/images/logo-orange-money.svg', title: 'Orange Money', sub: 'Paiement simple et sécurisé', bg: 'bg-orange-100' },
+    { img: '/images/logo-wave.png', title: 'Wave', sub: 'Paiement simple et sécurisé', bg: 'bg-sky-100' },
+    { img: '/images/logo-free-money.png', title: 'Free Money', sub: 'Paiement simple et sécurisé', bg: 'bg-green-100' },
   ]
 
   return (
@@ -458,6 +461,15 @@ function DeliverySection() {
               <div className={`w-16 h-16 ${f.iconBg} rounded-full flex items-center justify-center text-3xl mx-auto mb-4`}>{f.icon}</div>
               <h3 className="font-bold text-gray-800 mb-1">{f.title}</h3>
               <p className="text-gray-600 text-sm">{f.sub}</p>
+            </div>
+          ))}
+          {payments.map((p, i) => (
+            <div key={i} className={`${p.bg} rounded-2xl p-6 text-center transform hover:-translate-y-2 transition-all duration-300 hover:shadow-lg`}>
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <img src={p.img} alt={p.title} className="h-10 w-auto" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-1">{p.title}</h3>
+              <p className="text-gray-600 text-sm">{p.sub}</p>
             </div>
           ))}
         </div>
