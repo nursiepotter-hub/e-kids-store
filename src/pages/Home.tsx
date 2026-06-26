@@ -3,6 +3,7 @@ import { ShoppingCart } from 'lucide-react'
 import { products, categories, testimonials } from '@/data/products'
 import { useCart } from '@/context/CartContext'
 import { useState } from 'react'
+import ProductCarousel from '@/components/ProductCarousel'
 
 const reasons = [
   {
@@ -344,7 +345,7 @@ function ProductsPreview() {
           {featured.map((p) => (
             <div key={p.id} className="product-card bg-white rounded-2xl overflow-hidden shadow-md">
               <div className="relative overflow-hidden bg-gray-50">
-                <img src={p.image} alt={p.name} className="product-image w-full h-52 object-cover p-2" style={{ borderRadius: '12px' }} />
+                <ProductCarousel images={p.images} alt={p.name} className="w-full h-52" />
                 {p.ageRange && (
                   <span className="absolute top-4 left-4 bg-coral-400 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
                     {p.ageRange}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ShoppingCart, Filter } from 'lucide-react'
 import { products, categories } from '@/data/products'
 import { useCart } from '@/context/CartContext'
+import ProductCarousel from '@/components/ProductCarousel'
 
 const formatPrice = (price: number) => {
   if (price === 0) return 'Prix à définir'
@@ -118,7 +119,7 @@ function ProductCard({ product, onAdd }: { product: typeof products[0]; onAdd: (
   return (
     <div className="product-card bg-white rounded-2xl overflow-hidden shadow-md">
       <div className="relative overflow-hidden bg-gray-50">
-        <img src={product.image} alt={product.name} className="product-image w-full h-52 object-cover p-2" style={{ borderRadius: '12px' }} />
+        <ProductCarousel images={product.images} alt={product.name} className="w-full h-52" />
         {product.ageRange && (
           <span className="absolute top-4 left-4 bg-coral-400 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
             {product.ageRange}
