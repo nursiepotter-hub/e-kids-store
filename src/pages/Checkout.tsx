@@ -101,9 +101,9 @@ export default function Checkout() {
                 <label className="block text-sm font-semibold text-gray-700 mb-3">Mode de paiement *</label>
                 <div className="grid grid-cols-3 gap-3">
                   {[
-                    { value: 'orange', label: 'Orange Money', icon: <svg viewBox="0 0 40 40" className="w-8 h-8"><circle cx="20" cy="20" r="18" fill="#FF7900"/><text x="20" y="25" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold" fontFamily="Arial">OM</text></svg> },
-                    { value: 'wave', label: 'Wave', icon: <svg viewBox="0 0 40 40" className="w-8 h-8"><circle cx="20" cy="20" r="18" fill="#0085FF"/><path d="M8 26 Q12 18 16 22 Q20 26 24 18 Q28 10 32 14" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round"/></svg> },
-                    { value: 'free', label: 'FreeMoney', icon: <svg viewBox="0 0 40 40" className="w-8 h-8"><circle cx="20" cy="20" r="18" fill="#00B862"/><text x="20" y="25" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="Arial">FM</text></svg> },
+                    { value: 'orange', label: 'Orange Money', icon: <img src="/images/logo-orange-money.svg" alt="Orange Money" className="h-8 w-auto" /> },
+                    { value: 'wave', label: 'Wave', icon: <img src="/images/logo-wave.png" alt="Wave" className="h-8 w-auto" /> },
+                    { value: 'free', label: 'FreeMoney', icon: <div className="h-8 w-8 rounded-lg bg-[#00B862] flex items-center justify-center text-white text-xs font-bold">FM</div> },
                   ].map((m) => (
                     <button
                       key={m.value}

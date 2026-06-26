@@ -8,17 +8,17 @@ export default function TopBanner() {
         </span>
         <span className="hidden sm:inline">|</span>
         <span className="flex items-center gap-1">
-          <svg viewBox="0 0 20 20" className="w-4 h-4"><circle cx="10" cy="10" r="9" fill="#FF7900"/><text x="10" y="13" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold" fontFamily="Arial">OM</text></svg>
+          <img src="/images/logo-orange-money.svg" alt="Orange Money" className="h-4 w-auto" />
           <span>Orange Money</span>
         </span>
         <span className="hidden sm:inline">|</span>
         <span className="flex items-center gap-1">
-          <svg viewBox="0 0 20 20" className="w-4 h-4"><circle cx="10" cy="10" r="9" fill="#0085FF"/><path d="M4 13 Q6 9 8 11 Q10 13 12 9 Q14 5 16 7" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round"/></svg>
+          <img src="/images/logo-wave.png" alt="Wave" className="h-4 w-auto" />
           <span>Wave</span>
         </span>
         <span className="hidden sm:inline">|</span>
         <span className="flex items-center gap-1">
-          <svg viewBox="0 0 20 20" className="w-4 h-4"><circle cx="10" cy="10" r="9" fill="#00B862"/><text x="10" y="13" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold" fontFamily="Arial">FM</text></svg>
+          <div className="h-4 w-4 rounded bg-[#00B862] flex items-center justify-center text-white text-[6px] font-bold">FM</div>
           <span>Free Money</span>
         </span>
       </div>
