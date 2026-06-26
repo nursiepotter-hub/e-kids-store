@@ -203,8 +203,8 @@ function AboutSection() {
               <div className="flex items-center gap-3">
                 <span className="text-4xl">💛</span>
                 <div>
-                  <p className="font-bold text-gray-800">Fait avec</p>
-                  <p className="text-sm text-gray-500">amour au Sénégal</p>
+                  <p className="font-bold text-gray-800">Fait pour les</p>
+                  <p className="text-sm text-gray-500">loulous avec amour</p>
                 </div>
               </div>
             </div>
