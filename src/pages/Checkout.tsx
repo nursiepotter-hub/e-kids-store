@@ -101,9 +101,9 @@ export default function Checkout() {
                 <label className="block text-sm font-semibold text-gray-700 mb-3">Mode de paiement *</label>
                 <div className="grid grid-cols-3 gap-3">
                   {[
-                    { value: 'orange', label: 'Orange Money', icon: '💛' },
-                    { value: 'wave', label: 'Wave', icon: '💙' },
-                    { value: 'free', label: 'FreeMoney', icon: '💚' },
+                    { value: 'orange', label: 'Orange Money', icon: <svg viewBox="0 0 40 40" className="w-8 h-8"><circle cx="20" cy="20" r="18" fill="#FF7900"/><text x="20" y="25" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold" fontFamily="Arial">OM</text></svg> },
+                    { value: 'wave', label: 'Wave', icon: <svg viewBox="0 0 40 40" className="w-8 h-8"><circle cx="20" cy="20" r="18" fill="#0085FF"/><path d="M8 26 Q12 18 16 22 Q20 26 24 18 Q28 10 32 14" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round"/></svg> },
+                    { value: 'free', label: 'FreeMoney', icon: <svg viewBox="0 0 40 40" className="w-8 h-8"><circle cx="20" cy="20" r="18" fill="#00B862"/><text x="20" y="25" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="Arial">FM</text></svg> },
                   ].map((m) => (
                     <button
                       key={m.value}
@@ -113,7 +113,7 @@ export default function Checkout() {
                         payment === m.value ? 'border-coral-400 bg-coral-50' : 'border-gray-200 hover:border-coral-200'
                       }`}
                     >
-                      <span className="text-2xl">{m.icon}</span>
+                      <span>{m.icon}</span>
                       <span className="text-xs font-semibold text-gray-700">{m.label}</span>
                     </button>
                   ))}

@@ -87,9 +87,22 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <span className="text-gray-500 text-sm">Paiement sécurisé:</span>
               <div className="flex gap-2">
-                <div className="w-10 h-10 rounded-lg bg-orange-500 flex items-center justify-center text-white text-xs font-bold">OM</div>
-                <div className="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center text-white text-xs font-bold">W</div>
-                <div className="w-10 h-10 rounded-lg bg-green-500 flex items-center justify-center text-white text-xs font-bold">FM</div>
+                <div className="w-10 h-10 rounded-lg bg-[#FF7900] flex items-center justify-center">
+                  <svg viewBox="0 0 40 40" className="w-8 h-8">
+                    <circle cx="20" cy="20" r="18" fill="white" opacity="0.2"/>
+                    <text x="20" y="24" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold" fontFamily="Arial">OM</text>
+                  </svg>
+                </div>
+                <div className="w-10 h-10 rounded-lg bg-[#0085FF] flex items-center justify-center">
+                  <svg viewBox="0 0 40 40" className="w-8 h-8">
+                    <path d="M8 26 Q12 18 16 22 Q20 26 24 18 Q28 10 32 14" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <div className="w-10 h-10 rounded-lg bg-[#00B862] flex items-center justify-center">
+                  <svg viewBox="0 0 40 40" className="w-8 h-8">
+                    <text x="20" y="24" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="Arial">FM</text>
+                  </svg>
+                </div>
               </div>
             </div>
 
