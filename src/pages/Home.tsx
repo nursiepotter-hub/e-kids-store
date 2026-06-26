@@ -128,7 +128,7 @@ function HeroSection() {
             <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-coral-300 rounded-full opacity-40 blur-xl" />
             <div className="absolute top-1/2 -right-4 w-24 h-24 bg-sky-300 rounded-full opacity-40 blur-lg" />
 
-            <div className="absolute -left-4 top-1/4 bg-white rounded-2xl shadow-lg p-4 animate-bounce-slow">
+            <div className="absolute -left-16 top-1/3 bg-white rounded-2xl shadow-lg p-4 animate-bounce-slow">
               <div className="flex items-center gap-2">
                 <span className="text-3xl">🧠</span>
                 <div>
@@ -138,7 +138,7 @@ function HeroSection() {
               </div>
             </div>
 
-            <div className="absolute -right-4 bottom-1/4 bg-white rounded-2xl shadow-lg p-4 animate-bounce-slow" style={{ animationDelay: '0.5s' }}>
+            <div className="absolute -right-16 bottom-1/3 bg-white rounded-2xl shadow-lg p-4 animate-bounce-slow" style={{ animationDelay: '0.5s' }}>
               <div className="flex items-center gap-2">
                 <span className="text-3xl">🚚</span>
                 <div>
