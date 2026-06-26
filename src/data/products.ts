@@ -30,7 +30,7 @@ export const products: Product[] = [
     id: 'bloc-bois-edu',
     name: 'Bloc de Construction Éducatif en Bois',
     price: 10000,
-    images: ['/images/toy1.jpeg', '/images/new-7.jpeg', '/images/new-8.jpeg', '/images/new-9.jpeg', '/images/new-10.jpeg', '/images/new-11.jpeg'],
+    images: ['/images/new-7.jpeg', '/images/new-8.jpeg', '/images/new-9.jpeg', '/images/new-10.jpeg', '/images/new-11.jpeg'],
     category: 'educatifs',
     ageRange: '3-6 ans',
     description: 'Bloc de construction en bois pour développer la créativité et la motricité fine des enfants.',
