@@ -62,7 +62,7 @@ export const products: Product[] = [
     id: 'puzzle-voyage',
     name: 'Puzzle Pratique à Emporter',
     price: 2500,
-    images: ['/images/produit-7.jpeg', '/images/toy14.jpeg', '/images/toy15.jpeg', '/images/toy16.jpeg', '/images/toy17.jpeg', '/images/toy18.jpeg', '/images/toy19.jpeg'],
+    images: ['/images/toy14.jpeg', '/images/toy15.jpeg', '/images/toy16.jpeg', '/images/toy18.jpeg', '/images/toy19.jpeg'],
     category: 'puzzles',
     description: 'Puzzle compact et facile à transporter.',
   },
