@@ -28,7 +28,7 @@ export default function ProductCarousel({ images, alt, className = '' }: Props) 
               e.preventDefault()
               setCurrent(prev => (prev === 0 ? images.length - 1 : prev - 1))
             }}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 hover:bg-white flex items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 hover:bg-white flex items-center justify-center shadow-md transition-all"
           >
             <ChevronLeft className="w-4 h-4 text-gray-700" />
           </button>
@@ -38,10 +38,13 @@ export default function ProductCarousel({ images, alt, className = '' }: Props) 
               e.preventDefault()
               setCurrent(prev => (prev === images.length - 1 ? 0 : prev + 1))
             }}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 hover:bg-white flex items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 hover:bg-white flex items-center justify-center shadow-md transition-all"
           >
             <ChevronRight className="w-4 h-4 text-gray-700" />
           </button>
+          <span className="absolute top-2 right-2 bg-black/40 text-white text-xs px-2 py-0.5 rounded-full">
+            {current + 1}/{images.length}
+          </span>
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
             {images.map((_, i) => (
               <button
