@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-coral: #FF6B6B;
-  --color-coral-light: #FF8E8E;
-  --color-teal: #4ECDC4;
-  --color-teal-light: #6DD5CE;
-  --color-sunny: #FFE66D;
-  --color-mint: #95E1D3;
-  --color-lavender: #C9B1FF;
-  --color-cream: #FFF8F0;
-  --color-charcoal: #2C363F;
-  --color-sage: #7A8B8B;
+  --color-red: #FF4D4D;
+  --color-red-light: #FF7373;
+  --color-red-dark: #CC2222;
+  --color-yellow: #FFD93D;
+  --color-yellow-light: #FFE680;
+  --color-blue: #4A90D9;
+  --color-blue-light: #6BA5E0;
+  --color-green: #6BCB77;
+  --color-green-light: #8FD99B;
+  --color-cream: #FFFBF5;
+  --color-charcoal: #2D2D2D;
+  --color-sage: #8A9B9B;
 
   --font-display: 'Fredoka One', 'Nunito', sans-serif;
   --font-body: 'Nunito', 'Inter', system-ui, sans-serif;

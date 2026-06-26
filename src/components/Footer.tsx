@@ -10,12 +10,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-coral flex items-center justify-center shadow-md">
+              <div className="w-12 h-12 rounded-xl bg-red flex items-center justify-center shadow-md ring-2 ring-yellow">
                 <span className="text-white font-display font-bold text-xl">K</span>
               </div>
               <div>
                 <span className="font-display text-xl font-bold tracking-wide text-white">E-Kids Store</span>
-                <span className="block text-[10px] tracking-[0.2em] text-white/40 uppercase font-semibold">Jouets éducatifs</span>
+                <span className="block text-[10px] tracking-[0.2em] text-white/40 uppercase font-bold">Jouets éducatifs</span>
               </div>
             </div>
             <p className="text-white/50 leading-relaxed max-w-md mb-6 text-sm">
@@ -23,7 +23,7 @@ export default function Footer() {
               des enfants. Livraison partout au Sénégal.
             </p>
             <div className="flex items-center gap-2 text-white/40 text-sm">
-              <Heart className="w-4 h-4 text-coral fill-coral" />
+              <Heart className="w-4 h-4 text-red fill-red" />
               <span>Éveiller l'intelligence par le jeu</span>
             </div>
           </div>
@@ -37,7 +37,7 @@ export default function Footer() {
                 { to: '/#histoire', label: 'Notre histoire' },
               ].map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} className="text-white/50 hover:text-coral transition-colors text-sm font-semibold">
+                  <Link to={l.to} className="text-white/50 hover:text-yellow transition-colors text-sm font-bold">
                     {l.label}
                   </Link>
                 </li>
@@ -49,18 +49,18 @@ export default function Footer() {
             <h4 className="font-display text-white text-lg mb-6">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-white/50 text-sm">
-                <MapPin className="w-4 h-4 text-coral shrink-0" />
+                <MapPin className="w-4 h-4 text-yellow shrink-0" />
                 <span>Dakar, Sénégal</span>
               </li>
               <li>
-                <a href="tel:+221XXXXXXXXX" className="flex items-center gap-3 text-white/50 hover:text-coral transition-colors text-sm">
-                  <Phone className="w-4 h-4 text-coral shrink-0" />
+                <a href="tel:+221XXXXXXXXX" className="flex items-center gap-3 text-white/50 hover:text-yellow transition-colors text-sm">
+                  <Phone className="w-4 h-4 text-yellow shrink-0" />
                   <span>+221 XX XXX XX XX</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:contact@ekids-store.com" className="flex items-center gap-3 text-white/50 hover:text-coral transition-colors text-sm">
-                  <Mail className="w-4 h-4 text-coral shrink-0" />
+                <a href="mailto:contact@ekids-store.com" className="flex items-center gap-3 text-white/50 hover:text-yellow transition-colors text-sm">
+                  <Mail className="w-4 h-4 text-yellow shrink-0" />
                   <span>contact@ekids-store.com</span>
                 </a>
               </li>
