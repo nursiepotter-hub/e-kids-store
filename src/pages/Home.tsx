@@ -194,9 +194,12 @@ function AboutSection() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&h=500&fit=crop"
-              alt="Enfant jouant avec des jouets en bois"
+            <video
+              src="/images/video-1.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
               className="rounded-3xl shadow-2xl w-full"
             />
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 animate-bounce-slow">
