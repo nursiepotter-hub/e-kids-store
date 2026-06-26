@@ -411,7 +411,7 @@ function GiftBoxSection() {
                 </li>
               ))}
             </ul>
-            <a href="https://wa.me/221773850913" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg inline-flex items-center gap-2">
+            <a href="https://wa.me/221772501082" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg inline-flex items-center gap-2">
               <span>Commander une Box</span>
               <span>🎁</span>
             </a>

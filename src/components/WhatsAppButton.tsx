@@ -1,4 +1,4 @@
-const PHONE = '221XXXXXXXXX'
+const PHONE = '221772501082'
 const MESSAGE = encodeURIComponent('Bonjour E-Kids Store ! J\'ai une question concernant vos jouets.')
 
 export default function WhatsAppButton() {
