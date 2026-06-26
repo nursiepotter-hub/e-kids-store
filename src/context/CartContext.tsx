@@ -8,8 +8,8 @@ interface CartItem extends Product {
 interface CartContextType {
   items: CartItem[]
   addItem: (product: Product) => void
-  removeItem: (id: number) => void
-  updateQuantity: (id: number, delta: number) => void
+  removeItem: (id: string) => void
+  updateQuantity: (id: string, delta: number) => void
   clearCart: () => void
   itemCount: number
   total: number
@@ -32,11 +32,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     })
   }, [])
 
-  const removeItem = useCallback((id: number) => {
+  const removeItem = useCallback((id: string) => {
     setItems(prev => prev.filter(i => i.id !== id))
   }, [])
 
-  const updateQuantity = useCallback((id: number, delta: number) => {
+  const updateQuantity = useCallback((id: string, delta: number) => {
     setItems(prev =>
       prev.map(i =>
         i.id === id ? { ...i, quantity: Math.max(0, i.quantity + delta) } : i

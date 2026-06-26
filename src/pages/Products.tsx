@@ -1,179 +1,143 @@
 import { useState } from 'react'
-import { Search, ShoppingBag, X, Check, ToyBrick } from 'lucide-react'
-import { products, type Product } from '@/data/products'
+import { ShoppingCart, Filter } from 'lucide-react'
+import { products, categories } from '@/data/products'
 import { useCart } from '@/context/CartContext'
 
-const categories = ['Tous', 'Blocs & Construction', 'STEM', 'Sensoriel', 'Puzzles', 'Rangements', 'Jeux de Rôle', 'Éducatif']
+const formatPrice = (price: number) => {
+  if (price === 0) return 'Prix à définir'
+  return `${price.toLocaleString('fr-FR')} F`
+}
+
+const ageRanges = ['all', 'Tout-petits', 'Moins de 4 ans', '2+ ans', '3+ ans', '3-5 ans', '3-6 ans', '4-7 ans', 'Moins de 5 ans', 'Tout âge']
 
 export default function Products() {
-  const [search, setSearch] = useState('')
-  const [active, setActive] = useState('Tous')
-  const [selected, setSelected] = useState<Product | null>(null)
+  const [activeCat, setActiveCat] = useState('all')
+  const [activeAge, setActiveAge] = useState('all')
   const { addItem } = useCart()
 
   const filtered = products.filter(p => {
-    const matchCat = active === 'Tous' || p.category === active
-    const matchSearch = p.name.toLowerCase().includes(search.toLowerCase())
-    return matchCat && matchSearch
+    const catMatch = activeCat === 'all' || p.category === activeCat
+    const ageMatch = activeAge === 'all' || p.ageRange === activeAge
+    return catMatch && ageMatch
   })
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-sky-50">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <span className="inline-block bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Nos Produits
+          </span>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-800">Jouets Éducatifs & Accessoires 🧸</h1>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Des jouets soigneusement sélectionnés pour éveiller la curiosité et développer les compétences de votre enfant
+          </p>
+        </div>
+
         <div className="mb-10">
-          <span className="text-blue font-bold tracking-widest text-sm uppercase">Notre sélection</span>
-          <h1 className="font-display text-4xl lg:text-5xl text-charcoal mt-3 mb-3">
-            Tous nos{' '}
-            <span className="text-red">jouets</span>
-          </h1>
-          <p className="text-sage font-bold">Livraison partout au Sénégal</p>
-        </div>
-
-        <div className="relative max-w-md mb-8">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-sage" />
-          <input
-            type="text"
-            placeholder="Rechercher..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-12 pr-4 py-3.5 rounded-full border-2 border-charcoal/10 focus:border-red focus:ring-2 focus:ring-red/20 outline-none bg-white font-bold"
-          />
-        </div>
-
-        <div className="flex flex-wrap gap-2 mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all ${
-                active === cat
-                  ? 'bg-red text-white shadow-md shadow-red/30'
-                  : 'bg-white text-charcoal/60 hover:text-red border-2 border-charcoal/10'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {filtered.length === 0 ? (
-          <div className="text-center py-20">
-            <ToyBrick className="w-16 h-16 text-sage/30 mx-auto mb-4" />
-            <p className="text-sage text-lg font-bold">Aucun jouet trouvé</p>
-            <p className="text-sage/50 text-sm mt-1">Les produits arrivent bientôt !</p>
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <Filter className="text-gray-500" size={18} />
+              <span className="font-semibold text-gray-700">Catégories:</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setActiveCat('all')}
+                className={`filter-tab ${activeCat === 'all' ? 'active' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+              >
+                Tous
+              </button>
+              {categories.map(cat => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCat(cat.id)}
+                  className={`filter-tab ${activeCat === cat.id ? 'active' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+                >
+                  {cat.icon} {cat.name}
+                </button>
+              ))}
+            </div>
           </div>
-        ) : (
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {filtered.map((p) => (
-              <ProductCard key={p.id} product={p} onClick={() => setSelected(p)} onAdd={() => addItem(p)} />
-            ))}
-          </div>
-        )}
-      </div>
 
-      {/* Modal */}
-      {selected && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal/60 backdrop-blur-sm"
-          onClick={() => setSelected(null)}
-        >
-          <div
-            className="bg-white rounded-[2rem] max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scale-in ring-2 ring-yellow"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 flex items-center justify-center hover:bg-white transition-colors z-10"
-            >
-              <X className="w-5 h-5 text-charcoal/60" />
-            </button>
-            <div className="grid md:grid-cols-2">
-              <div className="aspect-square bg-cream flex items-center justify-center p-8 rounded-tl-[2rem]">
-                <img
-                  src={selected.image}
-                  alt={selected.name}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="p-6 md:p-8 flex flex-col justify-between">
-                <div>
-                  <span className="text-xs text-blue font-bold uppercase tracking-widest">
-                    {selected.category}
-                  </span>
-                  <h2 className="font-display text-2xl text-charcoal mt-2 mb-3 leading-snug">
-                    {selected.name}
-                  </h2>
-                  <p className="text-sage text-sm leading-relaxed mb-6 font-bold">
-                    {selected.description}
-                  </p>
-                  <div className="space-y-2 mb-6">
-                    <div className="flex items-center gap-2 text-xs text-sage">
-                      <Check className="w-3.5 h-3.5 text-green" />
-                      Jouet éducatif et sécurisé
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-sage">
-                      <Check className="w-3.5 h-3.5 text-green" />
-                      Livraison Dakar & régions
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between border-t border-charcoal/10 pt-5">
-                  {selected.price > 0 ? (
-                    <>
-                      <span className="font-display text-2xl font-bold text-red">
-                        {selected.price.toLocaleString()} <span className="text-sm font-normal text-sage">FCFA</span>
-                      </span>
-                      <button
-                        onClick={() => { addItem(selected); setSelected(null) }}
-                        className="bg-red hover:bg-red-light text-white px-6 py-3 rounded-full text-sm font-bold transition-all shadow-lg shadow-red/30 flex items-center gap-2"
-                      >
-                        <ShoppingBag className="w-4 h-4" />
-                        Ajouter
-                      </button>
-                    </>
-                  ) : (
-                    <span className="text-sage italic text-sm font-bold">Prix à venir</span>
-                  )}
-                </div>
-              </div>
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="font-semibold text-gray-700">Tranche d'âge:</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setActiveAge('all')}
+                className={`filter-tab ${activeAge === 'all' ? 'active' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+              >
+                Tous les âges
+              </button>
+              {ageRanges.filter(a => a !== 'all').map(age => (
+                <button
+                  key={age}
+                  onClick={() => setActiveAge(age)}
+                  className={`filter-tab ${activeAge === age ? 'active' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+                >
+                  {age}
+                </button>
+              ))}
             </div>
           </div>
         </div>
-      )}
-    </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filtered.map((p) => (
+            <ProductCard key={p.id} product={p} onAdd={() => addItem(p)} />
+          ))}
+        </div>
+
+        {filtered.length === 0 && (
+          <div className="text-center py-12">
+            <span className="text-6xl mb-4 block">🔍</span>
+            <p className="text-gray-600 text-lg">Aucun produit trouvé pour ces critères.</p>
+            <button
+              onClick={() => { setActiveCat('all'); setActiveAge('all') }}
+              className="mt-4 text-coral-400 font-semibold hover:underline"
+            >
+              Réinitialiser les filtres
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
   )
 }
 
-function ProductCard({ product, onClick, onAdd }: { product: Product; onClick: () => void; onAdd: () => void }) {
+function ProductCard({ product, onAdd }: { product: typeof products[0]; onAdd: () => void }) {
+  const [added, setAdded] = useState(false)
+
+  const handleAdd = () => {
+    onAdd()
+    setAdded(true)
+    setTimeout(() => setAdded(false), 1500)
+  }
+
   return (
-    <div
-      className="group bg-white rounded-[1.5rem] overflow-hidden border-2 border-charcoal/5 hover:border-red/30 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 cursor-pointer"
-      onClick={onClick}
-    >
-      <div className="relative aspect-square overflow-hidden bg-cream">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-        <button
-          onClick={(e) => { e.stopPropagation(); onAdd() }}
-          disabled={product.price === 0}
-          className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-full text-sm font-bold text-charcoal opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all shadow-lg hover:bg-red hover:text-white flex items-center gap-2"
-        >
-          <ShoppingBag className="w-4 h-4" />
-          {product.price > 0 ? 'Ajouter' : 'Bientôt'}
-        </button>
-      </div>
-      <div className="p-4">
-        <span className="text-xs text-blue font-bold uppercase tracking-wider">{product.category}</span>
-        <h3 className="font-display text-base text-charcoal mt-1 mb-2 line-clamp-2 leading-snug">{product.name}</h3>
-        {product.price > 0 ? (
-          <span className="text-red font-bold text-lg">{product.price.toLocaleString()} FCFA</span>
-        ) : (
-          <span className="text-xs text-sage italic font-bold">Prix à venir</span>
+    <div className="product-card bg-white rounded-2xl overflow-hidden shadow-md">
+      <div className="relative overflow-hidden bg-gray-50">
+        <img src={product.image} alt={product.name} className="product-image w-full h-52 object-cover p-2" style={{ borderRadius: '12px' }} />
+        {product.ageRange && (
+          <span className="absolute top-4 left-4 bg-coral-400 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+            {product.ageRange}
+          </span>
         )}
+      </div>
+      <div className="p-5">
+        <h3 className="font-bold text-gray-800 mb-2 line-clamp-2">{product.name}</h3>
+        <div className="flex items-center justify-between mb-4">
+          <span className={`price-tag ${product.price === 0 ? 'na' : ''}`}>{formatPrice(product.price)}</span>
+        </div>
+        <button
+          onClick={handleAdd}
+          className={`add-cart-btn w-full justify-center ${added ? '!bg-green-500' : ''}`}
+        >
+          {added ? '✓ Ajouté !' : (
+            <><ShoppingCart size={18} /><span>Ajouter au panier</span></>
+          )}
+        </button>
       </div>
     </div>
   )
