@@ -150,7 +150,7 @@ export const products: Product[] = [
     id: 'rangement-pratique',
     name: 'Box de Rangement Pratique',
     price: 6500,
-    images: ['/images/toy3.jpeg', '/images/toy4.jpeg'],
+    images: ['/images/toy3.jpeg', '/images/video-3.mp4'],
     category: 'rangements',
     description: 'Box de rangement pratique.',
   },
