@@ -28,11 +28,11 @@ export const categories: Category[] = [
 export const products: Product[] = [
   {
     id: 'bloc-bois-edu',
-    name: 'Bloc de Construction Éducatif en Bois',
+    name: 'Bloc de Construction Sensoriel',
     price: 10000,
-    images: ['/images/new-7.jpeg', '/images/new-8.jpeg', '/images/new-9.jpeg', '/images/new-10.jpeg', '/images/new-11.jpeg'],
+    images: ['/images/bloc-sensoriel-1.jpg', '/images/bloc-sensoriel-2.jpg'],
     category: 'educatifs',
-    description: 'Bloc de construction en bois.',
+    description: 'Bloc de construction sensoriel.',
   },
   {
     id: 'bloc-petits',
