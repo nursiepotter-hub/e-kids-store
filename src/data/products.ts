@@ -158,7 +158,7 @@ export const products: Product[] = [
     id: 'rangement-extra',
     name: 'Box de Rangement Extra',
     price: 7500,
-    images: ['/images/toy3.jpeg', '/images/toy4.jpeg', '/images/toy9.jpeg', '/images/toy5.jpeg', '/images/video-3.mp4'],
+    images: ['/images/rangement-extra-1.jpg', '/images/rangement-extra-2.jpg', '/images/rangement-extra-3.jpg'],
     category: 'rangements',
     description: 'Box de rangement extra, plus grande capacité.',
   },
