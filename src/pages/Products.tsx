@@ -10,20 +10,15 @@ const formatPrice = (price: number) => {
   return `${price.toLocaleString('fr-FR')} F`
 }
 
-const ageRanges = ['all', 'Tout-petits', 'Moins de 4 ans', '2+ ans', '3+ ans', '3-5 ans', '3-6 ans', '4-7 ans', 'Moins de 5 ans', 'Tout âge']
-
 export default function Products() {
   const location = useLocation()
   const params = new URLSearchParams(location.search)
   const [activeCat, setActiveCat] = useState(params.get('categorie') || 'all')
-  const [activeAge, setActiveAge] = useState('all')
   const { addItem } = useCart()
 
-  const filtered = products.filter(p => {
-    const catMatch = activeCat === 'all' || p.category === activeCat
-    const ageMatch = activeAge === 'all' || p.ageRange === activeAge
-    return catMatch && ageMatch
-  })
+  const filtered = activeCat === 'all'
+    ? products
+    : products.filter(p => p.category === activeCat)
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-white to-sky-50">
@@ -63,28 +58,6 @@ export default function Products() {
             </div>
           </div>
 
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="font-semibold text-gray-700">Tranche d'âge:</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => setActiveAge('all')}
-                className={`filter-tab ${activeAge === 'all' ? 'active' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
-              >
-                Tous les âges
-              </button>
-              {ageRanges.filter(a => a !== 'all').map(age => (
-                <button
-                  key={age}
-                  onClick={() => setActiveAge(age)}
-                  className={`filter-tab ${activeAge === age ? 'active' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
-                >
-                  {age}
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
