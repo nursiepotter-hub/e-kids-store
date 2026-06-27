@@ -300,7 +300,7 @@ function CategoriesSection() {
           {categories.map((cat) => (
             <Link
               key={cat.id}
-              to="/produits"
+              to={`/produits?categorie=${cat.id}`}
               className="category-card bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl border border-gray-100"
             >
               <div

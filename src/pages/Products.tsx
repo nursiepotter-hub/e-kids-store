@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { ShoppingCart, Filter } from 'lucide-react'
 import { products, categories } from '@/data/products'
 import { useCart } from '@/context/CartContext'
@@ -12,9 +13,15 @@ const formatPrice = (price: number) => {
 const ageRanges = ['all', 'Tout-petits', 'Moins de 4 ans', '2+ ans', '3+ ans', '3-5 ans', '3-6 ans', '4-7 ans', 'Moins de 5 ans', 'Tout âge']
 
 export default function Products() {
-  const [activeCat, setActiveCat] = useState('all')
+  const [searchParams] = useSearchParams()
+  const [activeCat, setActiveCat] = useState(searchParams.get('categorie') || 'all')
   const [activeAge, setActiveAge] = useState('all')
   const { addItem } = useCart()
+
+  useEffect(() => {
+    const cat = searchParams.get('categorie')
+    if (cat) setActiveCat(cat)
+  }, [searchParams])
 
   const filtered = products.filter(p => {
     const catMatch = activeCat === 'all' || p.category === activeCat
