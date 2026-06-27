@@ -118,7 +118,7 @@ export const products: Product[] = [
     id: 'cuisine-edu',
     name: 'Jeu de Rôle Cuisine Éducatif',
     price: 12500,
-    images: ['/images/produit-11.jpeg'],
+    images: ['/images/cuisine-1.jpg', '/images/cuisine-2.jpg'],
     category: 'jeux-role',
     description: 'Cuisine éducative.',
   },
