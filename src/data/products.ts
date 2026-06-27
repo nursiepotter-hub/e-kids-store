@@ -28,19 +28,11 @@ export const categories: Category[] = [
 export const products: Product[] = [
   {
     id: 'bloc-petits',
-    name: 'Bloc de Construction - Moins de 4 ans',
+    name: 'Bloc de Construction Sensoriel - Moins de 4 ans',
     price: 5000,
-    images: ['/images/new-14.jpeg', '/images/new-15.jpeg', '/images/new-16.jpeg', '/images/new-18.jpeg'],
-    category: 'educatifs',
-    description: 'Bloc de construction adapté aux enfants.',
-  },
-  {
-    id: 'bloc-sensoriel',
-    name: 'Bloc de Construction Sensoriel',
-    price: 10000,
-    images: ['/images/bloc-sensoriel-1.jpg', '/images/bloc-sensoriel-2.jpg'],
+    images: ['/images/new-14.jpeg', '/images/new-15.jpeg', '/images/new-16.jpeg', '/images/new-18.jpeg', '/images/bloc-sensoriel-1.jpg', '/images/bloc-sensoriel-2.jpg'],
     category: 'sensoriel',
-    description: 'Bloc de construction sensoriel.',
+    description: 'Bloc de construction sensoriel adapté aux enfants de moins de 4 ans.',
   },
   {
     id: 'construction-chaise',
