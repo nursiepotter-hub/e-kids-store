@@ -155,6 +155,14 @@ export const products: Product[] = [
     description: 'Box de rangement pratique.',
   },
   {
+    id: 'rangement-extra',
+    name: 'Box de Rangement Extra',
+    price: 7500,
+    images: ['/images/toy3.jpeg', '/images/toy4.jpeg', '/images/toy9.jpeg', '/images/toy5.jpeg', '/images/video-3.mp4'],
+    category: 'rangements',
+    description: 'Box de rangement extra, plus grande capacité.',
+  },
+  {
     id: 'voiture-plastique',
     name: 'Voiture en Plastique',
     price: 0,
