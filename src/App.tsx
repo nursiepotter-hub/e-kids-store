@@ -1,4 +1,6 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import ReactGA from 'react-ga4'
 import { CartProvider } from '@/context/CartContext'
 import TopBanner from '@/components/TopBanner'
 import Header from '@/components/Header'
@@ -10,9 +12,18 @@ import Products from '@/pages/Products'
 import Cart from '@/pages/Cart'
 import Checkout from '@/pages/Checkout'
 
+function AnalyticsTracker() {
+  const location = useLocation()
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: location.pathname + location.search })
+  }, [location])
+  return null
+}
+
 export default function App() {
   return (
     <BrowserRouter>
+      <AnalyticsTracker />
       <CartProvider>
         <TopBanner />
         <Header />
