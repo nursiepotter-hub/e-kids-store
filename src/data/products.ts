@@ -178,15 +178,6 @@ export const products: Product[] = [
     category: 'stem',
     description: 'Boîte magnétique pour constructions créatives.',
   },
-  {
-    id: 'bloc-construction-extra',
-    name: 'Bloc de Construction Extra',
-    price: 12000,
-    images: ['/images/new-27.jpeg', '/images/new-28.jpeg', '/images/new-29.jpeg'],
-    category: 'educatifs',
-    ageRange: '2-5 ans',
-    description: 'Bloc de construction extra large pour les tout-petits.',
-  },
 ]
 
 export const testimonials = [
