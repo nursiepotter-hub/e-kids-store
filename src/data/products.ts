@@ -166,7 +166,7 @@ export const products: Product[] = [
     id: 'jouet-plastique',
     name: 'Jouet Éducatif en Plastique',
     price: 3000,
-    images: ['/images/new-12.jpeg', '/images/new-13.jpeg', '/images/new-17.jpeg', '/images/new-20.jpeg', '/images/new-26.jpeg', '/images/new-37.jpeg'],
+    images: ['/images/new-12.jpeg', '/images/new-13.jpeg', '/images/new-17.jpeg', '/images/new-20.jpeg', '/images/new-26.jpeg'],
     category: 'educatifs',
     description: 'Jouet éducatif en plastique.',
   },
