@@ -71,7 +71,7 @@ export default function Products() {
             <span className="text-6xl mb-4 block">🔍</span>
             <p className="text-gray-600 text-lg">Aucun produit trouvé pour ces critères.</p>
             <button
-              onClick={() => { setActiveCat('all'); setActiveAge('all') }}
+              onClick={() => { setActiveCat('all') }}
               className="mt-4 text-coral-400 font-semibold hover:underline"
             >
               Réinitialiser les filtres
